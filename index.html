@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>00 Multimarcas - Pique Importada</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+<header class="text-center pt-8 pb-4 px-4">
+<p class="bg-white text-black inline-block px-4 py-1 rounded-full text-[10px] font-black">00 MULTIMARCAS</p>
+<h1 class="text-[36px] leading-[0.9] mt-4 font-black">CAMISA GOLA POLO<br><span class="text-zinc-500">PIQUE</span> IMPORTADA</h1>
+<p class="text-zinc-400 text-sm mt-2">Lacoste • Tommy • Ralph Lauren</p>
+</header>
+<div class="grid grid-cols-2 gap-3 p-3 max-w-5xl mx-auto" id="grade"></div>
+<script>
+const lista=[
+{ n:"LACOSTE BRANCA", f:"produto-01.jpeg" },
+{ n:"LACOSTE PRETA", f:"produto-02.jpeg" },
+{ n:"LACOSTE AZUL", f:"produto-03.jpeg" },
+{ n:"LACOSTE VERMELHA", f:"produto-04.jpeg" },
+{ n:"TOMMY HILFIGER", f:"produto-14.jpeg" },
+{ n:"LACOSTE SPORT", f:"produto-15.jpeg" },
+{ n:"KIT 3 POLOS", f:"produto-10.jpeg" },
+{ n:"BERMUDA LACOSTE", f:"produto-11.jpeg" },
+];
+const g=document.getElementById('grade');
+lista.forEach(p=>{
+g.innerHTML+=`<div class="bg-zinc-900 rounded-[20px] overflow-hidden border border-zinc-800"><img src="${p.f}" class="w-full h-56 object-cover"><div class="p-3"><p class="text-[9px] text-zinc-500 font-black">PIQUE IMPORTADO</p><p class="font-black text-xs mt-1">CAMISA GOLA POLO<br>${p.n}</p><a href="https://wa.me/5598984000000?text=Quero%20a%20Polo%20${encodeURIComponent(p.n)}" class="block mt-3 bg-white text-black text-center font-black py-2.5 rounded-full text-xs">COMPRAR</a></div></div>`;
+});
+</script>
+</body>
+</html>
