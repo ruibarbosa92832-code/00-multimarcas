@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>00 MULTIMARCAS - A LOJA MAIS BRABA DO MARANHÃO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<style>
+.font-anton{font-family:'Anton',sans-serif}.font-cinzel{font-family:'Cinzel',serif}
+.gold-gradient{background:linear-gradient(135deg,#FFD700,#D4AF37,#B8860B);color:#000}
+.gold-border{border:1.5px solid #D4AF37}
+.gold-text{background:linear-gradient(135deg,#FFD700,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+</style>
+</head>
+<body class="bg-black text-white font-anton">
+<header class="fixed top-0 w-full bg-black/95 border-b border-[#D4AF37]/30 z-50 flex justify-between items-center px-4 py-3">
+  <a href="index.html" class="flex items-center gap-2"><img src="logo.PNG" onerror="this.src='logo.png'" class="h-9"><span class="font-cinzel text-[#D4AF37] text-sm">00 MULTIMARCAS</span></a>
+  <div class="flex items-center gap-3">
+    <a href="carrinho.html" class="relative w-11 h-11 bg-black gold-border flex items-center justify-center text-[#D4AF37] rounded-full text-xl">🛒<span id="cartCount" class="absolute -top-1 -right-1 bg-[#FFD700] text-black text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-black hidden">0</span></a>
+    <div class="relative">
+      <button id="menuBtn" class="w-11 h-11 bg-black gold-border flex items-center justify-center text-[#D4AF37] text-2xl rounded-full">⋮</button>
+      <div id="menuDrop" class="hidden absolute right-0 top-14 bg-[#0f0f0f] gold-border w-72 py-2 z-50">
+        <a href="index.html" class="block px-5 py-4 text-[#D4AF37] bg-[#D4AF37]/10 font-cinzel text-sm">🏠 INÍCIO</a>
+        <a href="camisas.html" class="block px-5 py-4 text-white hover:bg-[#D4AF37]/10 font-cinzel text-sm border-t border-[#D4AF37]/10">👕 CAMISA</a>
+        <a href="bermudas.html" class="block px-5 py-4 text-white hover:bg-[#D4AF37]/10 font-cinzel text-sm border-t border-[#D4AF37]/10">🩳 BERMUDA</a>
+        <a href="carrinho.html" class="block px-5 py-4 text-white hover:bg-[#D4AF37]/10 font-cinzel text-sm border-t border-[#D4AF37]/10">🛒 CARRINHO</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="text-center pt-28 pb-12 px-4" style="background:radial-gradient(ellipse at center,#1a1a0a 0%,#000 70%)">
+  <img src="logo.PNG" onerror="this.src='logo.png'" class="w-full max-w-[420px] mx-auto">
+  <h1 class="font-cinzel gold-text text-5xl font-black mt-4">00 MULTIMARCAS</h1>
+  <p class="font-cinzel text-zinc-400 tracking-[0.3em] text-[10px] mt-2">A LOJA MAIS BRABA DO MARANHÃO</p>
+</section>
+
+<section class="bg-[#0a0a0a] border-y border-[#D4AF37]/20 py-10 px-4">
+  <h2 class="font-cinzel text-center text-[#D4AF37] tracking-[0.4em] text-xs mb-8">✦ MARCAS OFICIAIS ✦</h2>
+  <div class="grid grid-cols-4 gap-2 max-w-4xl mx-auto">
+    <div class="bg-black gold-border h-20 flex items-center justify-center text-[#D4AF37] font-cinzel font-black text-xs">NIKE</div>
+    <div class="bg-black gold-border h-20 flex items-center justify-center text-[#D4AF37] font-cinzel font-black text-xs">LACOSTE</div>
+    <div class="bg-black gold-border h-20 flex items-center justify-center text-[#D4AF37] font-cinzel font-black text-[10px]">TOMMY HILFIGER</div>
+    <div class="bg-black gold-border h-20 flex items-center justify-center text-[#D4AF37] font-cinzel font-black text-sm">MR2</div>
+  </div>
+</section>
+
+<script>
+function updateCount(){let c=JSON.parse(localStorage.getItem('cart00')||'[]');let el=document.getElementById('cartCount');if(c.length>0){el.classList.remove('hidden');el.innerText=c.length;}}
+const btn=document.getElementById('menuBtn'),drop=document.getElementById('menuDrop');btn.onclick=(e)=>{e.stopPropagation();drop.classList.toggle('hidden');};document.onclick=()=>drop.classList.add('hidden');updateCount();
+</script>
+</body>
+</html>
